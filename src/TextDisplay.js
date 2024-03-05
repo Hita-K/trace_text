@@ -3,6 +3,8 @@ import './TextDisplay.css';
 import mapList from './ehr1-dict.json';
 import phraseMapping from './ehr2.json';
 
+const mapRef = {}
+
 const textStyle = {
   color: 'black',
   fontFamily: "'Source Code Pro', monospace",
