@@ -16,9 +16,10 @@ training-PHI-Gold-Set1 - set of medical progress notes from n2c2 dataset
 
 ## How to start:
 
-npm install (might have to remove the node_modules directory first)
-Run npm audit fix if needed
-npm start
+`npm install`
+(might have to remove the node_modules directory first)
+Run `npm audit fix` if needed
+`npm start`
 
 Open http://localhost:3000 to view it in the browser
 
