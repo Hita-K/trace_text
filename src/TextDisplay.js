@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './TextDisplay.css';
-import mapList from './ehr1-dict.json';
-import phraseMapping from './ehr2.json';
+// import mapList from './ehr1-dict.json';
+// import phraseMapping from './ehr2.json';
 
+const mapRef = {}
 const textStyle = {
   color: 'black',
   fontFamily: "'Source Code Pro', monospace",
@@ -30,6 +31,8 @@ const containerStyle = {
   height: '100vh' // Takes full viewport height
   };
 
+
+
 // Style for the labels
 const labelStyle = {
     fontWeight: 'bold', // Makes the label text bold
@@ -46,26 +49,50 @@ function TextDisplay() {
   const [popupContent, setPopupContent] = useState('');
   const [popupPosition, setPopupPosition] = useState({ x: 0, y: 0 });
   const [clickedWord, setClickedWord] = useState('');
+  
   const [clickedIndex, setClickedIndex] = useState(null);
   const pinkHighlightPhrases = ['bend and turn his head', 'cervical range of motion'];
   const [highlightedWords, setHighlightedWords] = useState([]);
+  const [logMessages, setLogMessages] = useState([]);
+  const [clickTimes, setClickTimes] = useState([]);
+  const [mapList, setMapList] = useState({}); // Now this will be set dynamically
+  const [phraseMapping, setPhraseMapping] = useState({}); // Now this will be set dynamically
+
 
 
 
 
   useEffect(() => {
-    fetch('/ehr1.txt')
-      .then((response) => response.text())
-      .then((data) => setText(data))
-      .catch((error) => console.error('Error:', error));
+    const queryParams = new URLSearchParams(window.location.search);
+    const fileNumber = queryParams.get('file') || '1'; // Default to 1 if not specified
 
-    fetch('/ehr1-interp.txt')
-      .then((response) => response.text())
-      .then((data) => setSummarized(data))
-      .catch((error) => console.error("SKRT", error));
+
+    // Dynamically import the JSON and text files based on the file number
+    import(`./ehr${fileNumber}-dict.json`)
+      .then(data => {
+        setMapList(data.default); // Make sure to use data.default with dynamic imports
+      })
+      .catch(error => console.error('Failed to load map list:', error));
+
+    import(`./ehr${fileNumber}.json`)
+      .then(data => {
+        setPhraseMapping(data.default); // Make sure to use data.default with dynamic imports
+      })
+      .catch(error => console.error('Failed to load phrase mapping:', error));
+
+    fetch(`/ehr${fileNumber}.txt`)
+      .then(response => response.text())
+      .then(data => setText(data))
+      .catch(error => console.error('Error loading text:', error));
+
+    fetch(`/ehr${fileNumber}-interp.txt`)
+      .then(response => response.text())
+      .then(data => setSummarized(data))
+      .catch(error => console.error('Error loading summarized text:', error));
+
 
     
-  }, []);
+  }, [window.location.search]);
 
 
   
@@ -102,6 +129,28 @@ function TextDisplay() {
       setClickedIndex(index);
     }
   };
+
+
+  const logAndDownloadUtcTime = () => {
+    const utcTime = new Date().toUTCString(); // Get current UTC time
+    // Prepare log message for download
+    const logMessage = `Button clicked at UTC time: ${utcTime}`;
+    // Optionally, log to console or another logging mechanism
+    console.log(logMessage);
+
+    // Prepare and download the log file
+    const blob = new Blob([logMessage], { type: 'text/plain' });
+    const href = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = href;
+    link.download = 'utc-time-log.txt';
+    document.body.appendChild(link);
+    link.click();
+
+    // Clean-up
+    document.body.removeChild(link);
+    URL.revokeObjectURL(href);
+  };
   
 
   // const handleClosePopup = () => {
@@ -110,38 +159,43 @@ function TextDisplay() {
 
   const getHighlightedText = (inputText, map, mapRef, hoveredWord) => {
     let highlightedText = inputText;
-    let processedText = {};
   
+    // Function to escape regex special characters
+    const escapeRegExp = (text) => text.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+  
+    // Highlight phrases with potential punctuation
     highlightedWords.forEach(phrase => {
-      const escapedPhrase = phrase.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
-      const phraseRegex = new RegExp(`(\\b${escapedPhrase}\\b)`, 'gi');
+      const escapedPhrase = escapeRegExp(phrase);
+      // Adjusted to match phrase potentially followed by punctuation
+      const phraseRegex = new RegExp(`(${escapedPhrase})(?=[\\s.,;!?]|$)`, 'gi');
       highlightedText = highlightedText.replace(phraseRegex, `<span class="highlight-pink">$&</span>`);
     });
-
+  
     Object.entries(map).forEach(([key, value]) => {
-      const escapedKey = key.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
-      const escapedValue = value.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
-      const keyRegex = new RegExp(`(\\b${escapedKey}\\b)`, 'gi');
-      const valueRegex = new RegExp(`(\\b${escapedValue}\\b)`, 'gi');  
-
+      const escapedKey = escapeRegExp(key);
+      const escapedValue = escapeRegExp(value);
+      // Adjusted regex to handle punctuation
+      const keyRegex = new RegExp(`(${escapedKey})(?=[\\s.,;!?]|$)`, 'gi');
+      const valueRegex = new RegExp(`(${escapedValue})(?=[\\s.,;!?]|$)`, 'gi');
+  
       highlightedText = highlightedText.replace(keyRegex, (_, match) => 
         `<span class="${hoveredWord === key ? 'highlight highlight-active' : 'highlight'}" data-word="${key}">${match}</span>`
       );
-      highlightedText = highlightedText.replace(valueRegex, (_, match) => 
-        `<span class="${hoveredWord === key ? 'highlight-value highlight-active' : 'highlight-value'}" data-word="${key}">${match}</span>`
-      );
-  
+      // Only replace if hoveredWord matches to prevent unwanted global highlighting
+      if (hoveredWord === key) {
+        highlightedText = highlightedText.replace(valueRegex, `<span class="highlight-value highlight-active" data-word="${key}">${value}</span>`);
+      }
     });
-
+  
+    // Process mapRef similar to map but for underlining
     Object.keys(mapRef).forEach((key) => {
-      const escapedKey = key.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
-      const keyRegex = new RegExp(`(\\b${escapedKey}\\b)`, 'gi');
+      const escapedKey = escapeRegExp(key);
+      // This regex now also properly accounts for punctuation
+      const keyRegex = new RegExp(`(${escapedKey})(?=[\\s.,;!?]|$)`, 'gi');
   
       highlightedText = highlightedText.replace(keyRegex, `<span class="underline" data-refkey="${key}">${key}</span>`);
     });
-
   
-    
     return highlightedText;
   };
 
@@ -155,14 +209,8 @@ function TextDisplay() {
       setHighlightedWords([]);
     }
   
-    // Capture the mouse position
-    const mouseX = event.clientX;
-    const mouseY = event.clientY;
-    // Capture the current time
-    const currentTime = new Date().toLocaleTimeString();
   
-    // Log the coordinates and time
-    console.log(`Hovered over '${word}': X=${mouseX}, Y=${mouseY}, Time=${currentTime}`);
+    
   };
   
   
@@ -197,6 +245,15 @@ function TextDisplay() {
         onClick={handleClick}
       />
     </div>
+    <button
+    style={{opacity: 10, position: 'absolute', top: '10px', left: '10px', zIndex: 1000}}
+    onClick={logAndDownloadUtcTime}
+    aria-hidden="true"
+>
+    Log and Download UTC
+</button>
+
+
 
     {showPopup && (
       <div
@@ -208,6 +265,8 @@ function TextDisplay() {
       >
         <div dangerouslySetInnerHTML={{ __html: popupContent }}></div>
         <button onClick={() => setShowPopup(false)}>Close</button>
+      
+
       </div>
     )}
 

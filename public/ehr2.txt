@@ -1,26 +1,6 @@
-This patient is seen here in follow-up of the following medical problems:
-
-PROBLEMS:  
-
-1.	Coronary artery disease status post coronary artery bypass (saphenous vein) in 2072.
-2.	Pulmonary embolus 2074.
-3.	Idiopathic hypertension.
-
-SUBJECTIVE:  He is entirely asymptomatic.  He has no complaint.
-
-REVIEW OF SYSTEMS:  Negative.  There is no chest pain, shortness of breath, cough, peripheral edema, orthopnea or PND.  All the other review of systems is negative as well.
-
-MEDICATIONS:  He continues on lisinopril 10 mg q.d., hydrochlorothiazide 25 mg q.d., atenolol 50 mg q.d., and Plavix 75 mg q.d.
-
-OBJECTIVE:  On examination today, the patient appears well.  He is cheerful and feisty.  Blood pressure 138/80 in the left arm, sitting.  Weight 175 pounds.  Apical pulse rate 80.  Cardiac rhythm is regular without murmur, gallop, rub or click.  Breath sounds are clear to percussion and auscultation.  No jugular venous distension.  No peripheral edema.
-
-ASSESSMENT:  
-
-1.	New York Heart Association functional class-I ISHD, status post CABG.
-2.	Well-controlled hypertension.
-
-PLAN:
-
-1.	Current regimen.
-2.	Please note that Lipitor was added to his regimen at his last visit for hypercholesterolemia.  Repeat cholesterol (which had been 263) is now 103.  He will continue the Lipitor as well.
-3.	He is to return prior to his planned winter sojourn in the United Kingdom in December.
+PRESENTING COMPLAINT and HISTORY OF PRESENTING COMPLAINT:  The patient is a 72-year-old gentleman who presents to the Emergency Department.  He reports nightly fevers.  He is two week status post AICD replacement.  He feels this is a malaria exacerbation.  The patient had malaria in Cambodia, and reports he did not have treatment.  His past medical history is also positive for non-insulin-dependent diabetes mellitus, aortic valve replacement with a porcine valve, and ventricular fibrillation.  He is on Glucophage and aspirin.  He has no known drug allergies.  The patient feels well.  He says that each night he gets fever up to 101 degrees F., although it is not that high each night.  The patient's past medical history is also significant for CAD, with an MI in 2092 and ventricular tachycardia in 2086.  His AICD was re-done two weeks ago.  He had a triple-A repair in 2089.  He has a history of gout.
+PHYSICAL EXAMINATION:  The patient is well-appearing now, with a temperature of 97 degrees F., a pulse of 58, a respiratory rate of 18 and unlabored, a blood pressure of 110/80, and a room air saturation of 96%.  The HEENT examination is negative.  The lungs are clear.  The heart has a regular rhythm.  The abdomen is soft and non-tender.  The patient appears quite well.
+LABORATORY EVALUATION:  Blood cultures are done.
+THERAPY RENDERED/COURSE IN ED:  The patient's primary care physician is contacted and will follow up with the patient.  The patient's white blood cell count is 6.  His hematocrit is 40.  His potassium is 4.9, his BUN 19, and his creatinine 0.9.  The urinalysis is negative for infection.  He has no pulmonary infection evident.  There are no ischemic changes on his EKG.  The patient appears to be doing well after the AICD replacement.  The AICD has not had to fire.
+FINAL DIAGNOSIS:  Nightly fevers, etiology uncertain.
+DISPOSITION (including condition upon discharge):  The patient is discharged in good condition to careful outpatient followup.
