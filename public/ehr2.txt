@@ -1,26 +1,11 @@
-This patient is seen here in follow-up of the following medical problems:
-
-PROBLEMS:  
-
-1.	Coronary artery disease status post coronary artery bypass (saphenous vein) in 2072.
-2.	Pulmonary embolus 2074.
-3.	Idiopathic hypertension.
-
-SUBJECTIVE:  He is entirely asymptomatic.  He has no complaint.
-
-REVIEW OF SYSTEMS:  Negative.  There is no chest pain, shortness of breath, cough, peripheral edema, orthopnea or PND.  All the other review of systems is negative as well.
-
-MEDICATIONS:  He continues on lisinopril 10 mg q.d., hydrochlorothiazide 25 mg q.d., atenolol 50 mg q.d., and Plavix 75 mg q.d.
-
-OBJECTIVE:  On examination today, the patient appears well.  He is cheerful and feisty.  Blood pressure 138/80 in the left arm, sitting.  Weight 175 pounds.  Apical pulse rate 80.  Cardiac rhythm is regular without murmur, gallop, rub or click.  Breath sounds are clear to percussion and auscultation.  No jugular venous distension.  No peripheral edema.
-
-ASSESSMENT:  
-
-1.	New York Heart Association functional class-I ISHD, status post CABG.
-2.	Well-controlled hypertension.
-
-PLAN:
-
-1.	Current regimen.
-2.	Please note that Lipitor was added to his regimen at his last visit for hypercholesterolemia.  Repeat cholesterol (which had been 263) is now 103.  He will continue the Lipitor as well.
-3.	He is to return prior to his planned winter sojourn in the United Kingdom in December.
+ID - 67 yo m recent NQWMI and newly diagnosed CHF.
+HPI - 67 yo m c h/o htn, heavy EtOH use, and smoking who presented on 10/12/70 to LGH c CP. BP on admit was 200/110. Pt ruled in c peak CK 362 c MB fraction of 51. no EKG changes. Echo revealed ef 25-30%. Pt was started on ecasa, atenolol, lasix, lisinopril, amlodipine and taken off HCTZ and terazosin (however cont'd to take terazosin.) Cath revealed minimal RCA stenoses. Since then has had no more CP. c/o DOE after 1 block of walking, where 2-3 mo's ago he was able to walk > 20 blocks. + 2 pillow orthopnea, + PND, - LE swelling. Has stopped drinking EtOH and cut down on cigs. BP by CDH: 148/90 (10/20) and 110/80 (10/22) PMH - htn, EtOH, cigs, COPD, BPH
+MEDICATIONS - Atenolol 100 qd, ECASA 325 qd, Lasix 20 qd, lisinopril 40 qd, amlodipine 5 qd, terazosin 4 qd, MVI, thiamine, folate
+PHYSICAL EXAM - 130/80, 80 JVP 7 RRR S1 S2, no S3, minimal bibasilar rales, distended abd but says has not changed recently, no fluid wave/organomegaly, NT, no LE swelling, warm and well perfused
+ASSESSMENT AND PLAN - 67 yo m c h/o htn, heavy EtOH use and smoking who presented c CHF in setting of NQWMI. Most likely had background of EtOHic CMP acutely worsened by decreased cardiac function secopndary to NQWMI.
+-cont'd BB, ACEi, ECASA, Lasix and amlodipine - advised pt to stop taking alpha block
+-checking BMP today to monitor renal function and k c recent addition of ACEi and lasix - will hold off titrating up until results are back.
+-checking LFTs and lipid panel. started pt on zocor.
+-referral to nutrition for advice re salt and fluid intake
+-referral to cardiac rehab
+-stressed importance of smoking cessation and continued avoidance of EtOH - declined nicotine patch
