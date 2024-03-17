@@ -221,7 +221,21 @@ function TextDisplay() {
     <div style={containerStyle}>
       {" "}
       {/* Flex container for both text displays */}
-      {/* Container for After-Visit Summary (Now on the left) */}
+      {/* Container for Progress Note (Now on the left) */}
+      <div style={{ width: "50%" }}>
+        <div style={labelStyle}>Progress Note</div>{" "}
+        {/* Label for Progress Note */}
+        <div
+          style={textStyle}
+          onMouseOver={handleMouseOver}
+          onMouseOut={handleMouseOut}
+          dangerouslySetInnerHTML={{
+            __html: getHighlightedText(text, mapList, mapRef, hoveredWord),
+          }}
+          onClick={handleClick}
+        />
+      </div>
+      {/* Container for After-Visit Summary (Now on the right) */}
       <div style={{ width: "50%" }}>
         <div style={labelStyle}>Summary</div>{" "}
         {/* Label for After-Visit Summary */}
@@ -236,20 +250,6 @@ function TextDisplay() {
               mapRef,
               hoveredWord
             ),
-          }}
-          onClick={handleClick}
-        />
-      </div>
-      {/* Container for Progress Note (Now on the right) */}
-      <div style={{ width: "50%" }}>
-        <div style={labelStyle}>Progress Note</div>{" "}
-        {/* Label for Progress Note */}
-        <div
-          style={textStyle}
-          onMouseOver={handleMouseOver}
-          onMouseOut={handleMouseOut}
-          dangerouslySetInnerHTML={{
-            __html: getHighlightedText(text, mapList, mapRef, hoveredWord),
           }}
           onClick={handleClick}
         />
