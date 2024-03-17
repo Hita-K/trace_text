@@ -6,9 +6,9 @@ import "./TextDisplay.css";
 const mapRef = {};
 const textStyle = {
   color: "black",
-  fontFamily: "'Source Code Pro', monospace",
+  fontFamily: "'Roboto', sans-serif",
   fontSize: "26px",
-  font: "Courier",
+  fontWeight: "200",
   overflow: "hidden",
   whiteSpace: "pre-wrap",
   maxWidth: "100cm",
@@ -19,7 +19,6 @@ const textStyle = {
 
 const interpTextStyle = {
   ...textStyle, // Inherits properties from textStyle
-  fontFamily: "'Georgia', serif", // More readable font
   lineHeight: "1.75", // Increased line spacing for better readability
 };
 
