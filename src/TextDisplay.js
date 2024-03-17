@@ -63,6 +63,9 @@ function TextDisplay() {
   const [mapList, setMapList] = useState({}); // Now this will be set dynamically
   const [phraseMapping, setPhraseMapping] = useState({}); // Now this will be set dynamically
 
+  // A list of phrases from the progress note that were included in the summary.
+  const [evidencePhrases, setEvidencePhrases] = useState([]);
+
   useEffect(() => {
     const queryParams = new URLSearchParams(window.location.search);
     const fileNumber = queryParams.get("file") || "1"; // Default to 1 if not specified
@@ -90,6 +93,13 @@ function TextDisplay() {
       .then((response) => response.text())
       .then((data) => setSummarized(data))
       .catch((error) => console.error("Error loading summarized text:", error));
+
+    fetch(`/ehr${fileNumber}-evidence.txt`)
+      .then((data) => data.text())
+      .then((text) => setEvidencePhrases(text.split("\n")))
+      .catch((error) =>
+        console.error("Error loading evidence phrases:", error)
+      );
 
     setVersionTitle(versionTitles[versionNumber]);
   }, [window.location.search]);
@@ -227,7 +237,7 @@ function TextDisplay() {
   };
 
   return (
-    <div style={containerStyle}>
+    <div style={containerStyle} onKeyDown={(e) => console.log(e)}>
       {" "}
       {/* Flex container for both text displays */}
       {/* Container for Progress Note (Now on the left) */}
