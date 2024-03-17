@@ -37,6 +37,11 @@ const labelStyle = {
   marginBottom: "0.5rem", // Spacing between the label and the text
 };
 
+const versionTitles = {
+  1: "AI-Generated Summary",
+  2: "Verified AI-Generated Summary",
+};
+
 function TextDisplay() {
   const [text, setText] = useState("");
   const [hoveredWord, setHoveredWord] = useState("");
@@ -45,6 +50,7 @@ function TextDisplay() {
   const [popupContent, setPopupContent] = useState("");
   const [popupPosition, setPopupPosition] = useState({ x: 0, y: 0 });
   const [clickedWord, setClickedWord] = useState("");
+  const [versionTitle, setVersionTitle] = useState("AI-Generated Summary");
 
   const [clickedIndex, setClickedIndex] = useState(null);
   const pinkHighlightPhrases = [
@@ -60,6 +66,7 @@ function TextDisplay() {
   useEffect(() => {
     const queryParams = new URLSearchParams(window.location.search);
     const fileNumber = queryParams.get("file") || "1"; // Default to 1 if not specified
+    const versionNumber = parseInt(queryParams.get("v"), 10) || 1; // Default to 1 if not specified
 
     // Dynamically import the JSON and text files based on the file number
     import(`./ehr${fileNumber}-dict.json`)
@@ -83,6 +90,8 @@ function TextDisplay() {
       .then((response) => response.text())
       .then((data) => setSummarized(data))
       .catch((error) => console.error("Error loading summarized text:", error));
+
+    setVersionTitle(versionTitles[versionNumber]);
   }, [window.location.search]);
 
   const handleClick = (event) => {
@@ -237,7 +246,7 @@ function TextDisplay() {
       </div>
       {/* Container for After-Visit Summary (Now on the right) */}
       <div style={{ width: "50%" }}>
-        <div style={labelStyle}>Summary</div>{" "}
+        <div style={labelStyle}>{versionTitle}</div>{" "}
         {/* Label for After-Visit Summary */}
         <div
           style={interpTextStyle} // Apply the adjusted style here
