@@ -1,11 +1,12 @@
-Litao Yan is a 26 year old patient that was seen in the office today for a patient
-visit. BP 135/73 | Pulse 72 | Temp (Src) 98.1 °F (36.7 °C) (Oral) | Ht 5' 10" (1.778 m)
-| Wt 154 lb (69.9 kg) | BMI 22.1 kg/m2
-
-Allergy List:
-No Known Allergies.
-No current outpatient medications on file.
-HPI: Here today for a checkup. Has no medical problems. Has noticed two small moles on left palm. One on palm and another on finger. One year onset. Has not gotten bigger. Concerned about it. No PMHx. GF stroke. Mother HTN. MGF HTN and renal failure. No diabetes. Computer Science PhD. Started 2022. China. Long term wants to go back to China. Exercise: Runs 30 minutes daily. Sometimes does weights. Diet: Lunch and dinner. White rice, chicken, broccoli. Sometimes red meat and fish. Alcohol none. No tobacco. No drugs. Only water. No soda. Sleeps 8 per day. Last summer had blood test and told LDL was high.
-ROS: Name: Litao Yan | DOB: 9/29/1997 | MRN: 474821253 | PCP: NO PCP | Legal Name: Litao Yan Dongho Baag, MD at 2/20/2024 3:10 PM
-Physical Exam: Awake, alert. No distress. EOMI, PERRL, Pharynx clear. Neck: No lymph nodes. Chest: CTA. CV: RRR w/o murmurs. SKIN: Numerous scattered very pigmented moles about back and torso and arms. All lesions < 6 mm. Two lesions on left hand.
-Assessment/Plan: Litao was seen today for physical. Diagnoses and all orders for this visit: Routine physical examination  - HEMOGLOBIN A1C; Future - BASIC METABOLIC PANEL; Future - HEME PROFILE + ELECT DIFF; Future - LIPID SCREEN; Future. Multiple atypical nevi - CONSULT TO DERMATOLOGY Screening for diabetes mellitus - HEMOGLOBIN A1C; Future - BASIC METABOLIC PANEL; Future History of high cholesterol - LIPID SCREEN; Future Here for routine physical but actually has concern about his lesion on hand/finger. Exam unremarkable except for prominent but small very hyperpigmented moles. Will get labs for screening. Consult dermatology for the lesions on hand. He is very concerned about this.
+PRESENTING COMPLAINT: Chest pain.
+HISTORY OF PRESENTING COMPLAINT: This patient is a 67-year-old male who has known atherosclerotic coronary heart disease manifested by myocardial infarction approximately five years ago. He also has congestive heart failure with an ejection fraction of 25%, and this is thought to be due to alcoholic cardiomyopathy given a substantial history of alcohol ingestion. Over the past several months, he has stopped taking his medicine because he could not get to his doctor and felt he could not buy the medicine. Over the past two weeks, he has been beset by palpitations and dyspnea on exertion as well as palpitations at rest.
+REVIEW OF SYSTEMS: He has had no vomiting, diaphoresis, radiation of the pain, change in bowel habits or any cough. All of the systems are negative.
+PAST MEDICAL HISTORY: He has had no significant surgeries.
+PHYSICAL EXAMINATION: GENERAL: Physical examination shows a patient who is awake, alert, calm and oriented. He is in no distress at the time of examination. EYES: He had no scleral icterus. NECK: There was no adenopathy. His thyroid was not palpable. CHEST: His chest was clear. CARDIOVASCULAR: His cardiovascular exam showed a regular rate and rhythm. ABDOMEN: His abdomen was soft and nontender. EXTREMITIES: His extremities showed no clubbing, cyanosis or edema. SKIN: He had no rash. NEURO: Neurologic exam was physiologic.
+LABORATORY EVALUATION: Electrocardiogram showed tachycardia and T-wave inversion diffusely, which was unchanged from prior electrocardiogram. His CK and troponin were unremarkable. His troponin was 1.1, which was similar to a previous admission.
+THERAPY RENDERED/COURSE IN ED: The patient was treated with beta blocker and aspirin in the Emergency Department.
+FINAL DIAGNOSES:
+1. Angina pectoris.
+2. Hypertension.
+3. Tachycardia.
+DISPOSITION (including condition upon discharge): The patient was admitted to the Medical service for further evaluation. He was admitted in satisfactory condition.
