@@ -56,11 +56,28 @@ function TextDisplay() {
   const [mapList, setMapList] = useState({}); // Now this will be set dynamically
   const [phraseMapping, setPhraseMapping] = useState({}); // Now this will be set dynamically
   const [evidenceText, setEvidenceText] = useState([]);
+  const [highlightEvidence, setHighlightEvidence] = useState(false);
 
 
-
-
-
+  useEffect(() => {
+    const toggleHighlight = (event) => {
+      // Check both the key and code to cover various browsers and OS
+      if (event.key === "Alt" || event.code === "AltLeft" || event.code === "AltRight") {
+        setHighlightEvidence(event.type === 'keydown'); // true for keydown, false for keyup
+      }
+    };
+  
+    // Add event listeners for both keydown and keyup
+    window.addEventListener('keydown', toggleHighlight);
+    window.addEventListener('keyup', toggleHighlight);
+  
+    // Cleanup event listeners on component unmount
+    return () => {
+      window.removeEventListener('keydown', toggleHighlight);
+      window.removeEventListener('keyup', toggleHighlight);
+    };
+  }, []);
+  
 
   useEffect(() => {
     const queryParams = new URLSearchParams(window.location.search);
@@ -82,15 +99,10 @@ function TextDisplay() {
       .then(response => response.text())
       .then(data => setSummarized(data))
       .catch(error => console.error('Error loading summarized text:', error));
-    
 
 
     
   }, [window.location.search]);
-
-
-  
-
 
   
   const handleClick = (event) => {
@@ -150,7 +162,7 @@ function TextDisplay() {
   };
   
 
-  const getHighlightedText = (inputText, map, mapRef, hoveredWord) => {
+  const getHighlightedText = (inputText, map, mapRef, evidenceText, highlightEvidence) => {
     let highlightedText = inputText;
   
     // Function to escape regex special characters
@@ -193,15 +205,7 @@ function TextDisplay() {
       highlightedText = highlightedText.replace(valueRegex, `<span class="highlight-value highlight-active" data-word="${key}">${value}</span>`);
     }
   });
-  
-    // Process mapRef similar to map but for underlining
-    Object.keys(mapRef).forEach((key) => {
-      const escapedKey = escapeRegExp(key);
-      // This regex now also properly accounts for punctuation
-      const keyRegex = new RegExp(`(${escapedKey})(?=[\\s.,;!?]|$)`, 'gi');
-  
-      highlightedText = highlightedText.replace(keyRegex, `<span class="underline" data-refkey="${key}">${key}</span>`);
-    });
+
   
     return highlightedText;
   };
@@ -237,7 +241,7 @@ function TextDisplay() {
         style={interpTextStyle} // Apply the adjusted style here
         onMouseOver={handleMouseOver}
         onMouseOut={handleMouseOut}
-        dangerouslySetInnerHTML={{ __html: getHighlightedText(summarized, mapList, mapRef, hoveredWord) }}
+        dangerouslySetInnerHTML={{ __html: getHighlightedText(summarized, mapList, mapRef, hoveredWord, evidenceText, highlightEvidence) }}
         onClick={handleClick}
       />
     </div>
@@ -248,7 +252,7 @@ function TextDisplay() {
         style={textStyle}
         onMouseOver={handleMouseOver}
         onMouseOut={handleMouseOut}
-        dangerouslySetInnerHTML={{ __html: getHighlightedText(text, mapList, mapRef, hoveredWord) }}
+        dangerouslySetInnerHTML={{ __html: getHighlightedText(text, mapList, mapRef, hoveredWord, evidenceText, highlightEvidence) }}
         onClick={handleClick}
       />
     </div>
