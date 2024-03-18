@@ -65,6 +65,16 @@ function TextDisplay() {
 
   // A list of phrases from the progress note that were included in the summary.
   const [evidencePhrases, setEvidencePhrases] = useState([]);
+  const [areEvidencePhrasesHighlighted, setAreEvidencePhrasesHighlighted] =
+    useState(false);
+
+  document.body.addEventListener("keydown", (event) => {
+    handleKeyDown(event);
+  });
+
+  document.addEventListener("keyup", (event) => {
+    handleKeyUp(event);
+  });
 
   useEffect(() => {
     const queryParams = new URLSearchParams(window.location.search);
@@ -236,8 +246,52 @@ function TextDisplay() {
     setHoveredWord("");
   };
 
+  /**
+   * Returns an innerHTML string that highlights phrases in the input that match phrases
+   * in the evidencePhrases list.
+   * */
+  const getEvidenceHighlights = (inputText) => {
+    let highlightedText = inputText;
+
+    // Function to escape regex special characters
+    const escapeRegExp = (inputText) =>
+      inputText.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&");
+
+    // Highlight phrases with potential punctuation
+    console.log(evidencePhrases);
+    evidencePhrases.forEach((phrase) => {
+      const escapedPhrase = escapeRegExp(phrase);
+      console.log(escapedPhrase);
+      // Adjusted to match phrase potentially followed by punctuation
+      const phraseRegex = new RegExp(
+        `(${escapedPhrase})(?=[\\s.,;!?]|$)`,
+        "gi"
+      );
+      highlightedText = highlightedText.replace(
+        phraseRegex,
+        `<span class="highlight">$&</span>`
+      );
+    });
+
+    console.log(highlightedText);
+
+    return highlightedText;
+  };
+
+  const handleKeyDown = (event) => {
+    if (event.key === "Alt") {
+      setAreEvidencePhrasesHighlighted(true);
+    }
+  };
+
+  const handleKeyUp = (event) => {
+    if (event.key === "Alt") {
+      setAreEvidencePhrasesHighlighted(false);
+    }
+  };
+
   return (
-    <div style={containerStyle} onKeyDown={(e) => console.log(e)}>
+    <div style={containerStyle}>
       {" "}
       {/* Flex container for both text displays */}
       {/* Container for Progress Note (Now on the left) */}
@@ -245,11 +299,14 @@ function TextDisplay() {
         <div style={labelStyle}>Progress Note</div>{" "}
         {/* Label for Progress Note */}
         <div
+          id="progress-note-div"
           style={textStyle}
           onMouseOver={handleMouseOver}
           onMouseOut={handleMouseOut}
           dangerouslySetInnerHTML={{
-            __html: getHighlightedText(text, mapList, mapRef, hoveredWord),
+            __html: areEvidencePhrasesHighlighted
+              ? getEvidenceHighlights(text)
+              : getHighlightedText(text, mapList, mapRef, hoveredWord),
           }}
           onClick={handleClick}
         />
