@@ -1,70 +1,69 @@
-.highlight, .highlight-value {
-    cursor: pointer;
-  }
+.highlight,
+.highlight-value {
+  cursor: pointer;
+}
 
 .highlight {
-    background-color: #daf0f8;
-    font-weight: bolder;
-
+  background-color: #daf0f8;
+  font-weight: bolder;
 }
 
-.highlight:hover, .highlight-value:hover {
-background-color: #add8e6;
+.highlight:hover,
+.highlight-value:hover {
+  background-color: #add8e6;
 }
 
-.highlight.highlight-active, .highlight-value.highlight-active {
-background-color: #0000ff;
-    color: #ffffff;
+.highlight.highlight-active,
+.highlight-value.highlight-active {
+  background-color: #0000ff;
+  color: #ffffff;
 }
 
 .popup {
-    position: absolute; /* Changed to absolute */
-    background-color: white;
-    padding: 20px;
-    border: 1px solid #ddd;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    /* You may need to adjust these offsets */
-    transform: translate(0, -100%);
-  }
-  
-  
-  .popup button {
-    margin-top: 10px; /* Spacing above the button */
-    padding: 5px 10px; /* Padding inside the button */
-    background-color: #007bff; /* Button color */
-    color: white; /* Text color */
-    border: none; /* Removing the border */
-    cursor: pointer; /* Cursor changes to pointer to indicate it's clickable */
-  }
-  
-  .popup button:hover {
-    background-color: #0056b3; /* Button color on hover */
-  }
-  
+  position: absolute; /* Changed to absolute */
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ddd;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  /* You may need to adjust these offsets */
+  transform: translate(0, -100%);
+}
 
-  .highlight-url {
-    background-color: #ffff99; /* Light yellow background */
-    cursor: pointer; /* Changes cursor to indicate interactivity */
-    padding: 0 2px; /* Adds some padding around the text */
-    border-radius: 3px; /* Optional: rounds the corners of the highlight */
-    text-decoration: none; /* Removes underline from links if they are */
-  }
-  
-  .highlight-url:hover {
-    background-color: #ffeb3b; /* Slightly darker yellow on hover */
-  }
-  
-  .highlight-pink {
-    background-color: rgb(140, 201, 165);
-  }
-  
-  .highlight-pink.highlight-active {
-    background-color: darkpink; /* Or any other color to indicate active hover */
-  }
-  
-  .underline {
-    text-decoration: underline;
-    cursor: pointer;
-  }
-  
+.popup button {
+  margin-top: 10px; /* Spacing above the button */
+  padding: 5px 10px; /* Padding inside the button */
+  background-color: #007bff; /* Button color */
+  color: white; /* Text color */
+  border: none; /* Removing the border */
+  cursor: pointer; /* Cursor changes to pointer to indicate it's clickable */
+}
+
+.popup button:hover {
+  background-color: #0056b3; /* Button color on hover */
+}
+
+.highlight-url {
+  background-color: #ffff99; /* Light yellow background */
+  cursor: pointer; /* Changes cursor to indicate interactivity */
+  padding: 0 2px; /* Adds some padding around the text */
+  border-radius: 3px; /* Optional: rounds the corners of the highlight */
+  text-decoration: none; /* Removes underline from links if they are */
+}
+
+.highlight-url:hover {
+  background-color: #ffeb3b; /* Slightly darker yellow on hover */
+}
+
+.highlight-pink {
+  background-color: rgb(140, 201, 165);
+}
+
+.highlight-pink.highlight-active {
+  background-color: darkpink; /* Or any other color to indicate active hover */
+}
+
+.underline {
+  text-decoration: underline;
+  cursor: pointer;
+}
