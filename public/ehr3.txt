@@ -1,12 +1,18 @@
-Patient is here for follow-up.
-1.  Diabetes.  Continues on both glyburide and Glucophage although recently has been out of glyburide and sugars have been somewhat high.
-2.  Hypertension.  Medications changed by either cardiology or the ANRC and now on amlodipine 7.5 mg qd as well as fosinopril 40 mg bid, continues on hydrochlorothiazide as well.  Reports compliance with his regimen.
-3.  CAD.  Switched from lovastatin to simvastatin, continues on a baby aspirin a day.  No complaints of any palpitations or chest pain or shortness of breath.
-4.  GERD.  Recently started on a proton pump inhibitor for chronic symptoms of heartburn type pain.
-Medications: simvastatin 20 mg qd, fosinopril 40 mg bid, glyburide 10 mg bid, Glucophage 1000 mg bid, metoprolol 100 mg bid, aspirin 81 mg qd, amlodipine 7.5 mg qd, omeprazole 20 mg qd, hydrochlorothiazide 25 mg qd.
-Physical Exam: Patient is in no apparent distress. Weight: 183 pounds. Blood Pressure: 148/74; 136/74. Neck: supple without thyroidomegaly. Lungs: Clear. Cor. S1, S2 without gallops, rubs II/VI SEM at apex radiating to axilla. Abdomen: non-tender, without organomegaly. Extremities: without edema. 
-Assessment and Plan
-1.  Diabetes.  Has been out of medication any is given a new prescription for his glyburide which he is now taking 10 mg bid.  Continuing on Glucophage.  Will check a fasting glucose, urine for microalbumin and HgbA1c just before his next appointment.
-2.  Hypertension.  Blood pressure initially elevated today but on subsequent reading within normal limits.  Continue current regimen but will monitor.  Check BUN and creatinine and potassium with next phlebotomy.
-3.  CAD.  Continue current regimen, check lipid profile just before next visit.  Also will check LFTs.
-I will see him for follow-up in two months.
+REASON FOR VISIT: Mr Qazi returns for followup of his coronary disease.
+INTERVAL HISTORY: He has no symptoms of chest pain or pressure, no palpitations dyspnea or orthopnea. He specifically denies predictable exertional chest pressure. Thinks he may have tried one TNG inthe course of the last year He has been active physically and does a considerable amount of scuba diving.
+PAST MEDICAL HISTORY: 
+1. CAD: -Cath 1/73: 80% prox RCA stenosis w/ thrombus, mod D1 stenosis, clear Lcx. LV gram EF 69%, normal motion. -Cath 9/81: Critical proximal ramus lesion. RCA with proximal 40% lesion, patent RCA stent. Patent left main, apical LAD with 99% lesion with L-L collaterals. Cfx 35% mid lesion. Normal LVEDP, no AS. LVf 50-55%. -Also with h/o RCA stent, unclear where procedure was done and patient unable to recall details. He was transferred in January 2013 to the WCH after presenting to the Florida Hospital Orlando with a non ST segment elevation MI in the anterolateral zone. He underwent angioplasty and stenting of his proximal LAD using a 2.5 x 13 mm Cypher drug eluting stent.
+2. Hyperlipidemia
+REVIEW OF SYSTEMS: There are no new findings except as above.
+PHYSICAL EXAMINATION:
+-temp: afebrile
+-Pulse: 60
+-resp. rate: 14
+-Chest: Clear to auscultation and percussion.
+-Neck: Carotids 2+ without bruits. JVP no jugular venous distention.
+-Skin: No rashes, anicteric.
+-General: No acute distress. Overweight
+-BP: 150/90 
+EKG: Normal sinus rhythm. There is incomplete right bundle branch block. There are very small Q-waves in leads V2 V3 V4 and V5 The tracing is unchanged
+IMPRESSION: BP is elevated.
+ASSESSMENT AND PLAN: He is doing quite well at this point and has no symptoms he will remain on his present medications plus HCTZ 25 mg daily and I will see him again in another year.

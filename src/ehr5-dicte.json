@@ -1,0 +1,20 @@
+{
+  "The patient came in for a check-up to review his health": "Patient is here for follow-up.",
+  "focusing on his diabetes" : "Diabetes.",
+  "high blood pressure" : "Hypertension.",
+  "heart condition," : "CAD.",
+  "chronic heartburn" : "GERD.",
+  "since he ran out of one of his medicines" : "although recently has been out of glyburide",
+  "and his blood sugar levels were a bit high" : "sugars have been somewhat high",
+  "he got a new prescription": "given a new prescription for his glyburide which he is now taking 10 mg bid.",
+  "The doctor plans to do some blood tests before the next visit": "Will check a fasting glucose, urine for microalbumin and HgbA1c just before his next appointment.",
+  "His blood pressure was a bit high at first": "Blood pressure initially elevated today",
+  "but then went back to normal" : "but on subsequent reading within normal limits.",
+  "the doctor decided to stick with the current medicines" :  "Continue current regimen but will monitor.",
+  "and will check his kidney function and potassium levels soon": "Check BUN and creatinine and potassium with next phlebotomy.",
+  "there's no change in his medication" : "CAD- Continue current regimen",
+  "but the doctor wants to do a blood test to check his cholesterol levels and liver function": "check lipid profile just before next visit. Also will check LFTs.",
+  "started on a new medication to help with heartburn": "Recently started on a proton pump inhibitor for chronic symptoms of heartburn type pain.",
+  "The patient looked fine during the exam, with no signs of distress, and his physical exam showed everything was mostly normal": "Physical Exam: Patient is in no apparent distress.",
+  "scheduled to come back in two months": "I will see him for follow-up in two months."
+}
