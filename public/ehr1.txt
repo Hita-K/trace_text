@@ -1,16 +1,14 @@
-This patient is seen here in follow-up of the following medical problems:
-PROBLEMS:  
-1.	Coronary artery disease status post coronary artery bypass (saphenous vein) in 2022.
-2.	Pulmonary embolus 2024.
-3.	Idiopathic hypertension.
-SUBJECTIVE:  He is entirely asymptomatic.  He has no complaint.
-REVIEW OF SYSTEMS:  Negative.  There is no chest pain, shortness of breath, cough, peripheral edema, orthopnea or PND.  All the other review of systems is negative as well.
-MEDICATIONS:  He continues on lisinopril 10 mg, hydrochlorothiazide 25 mg, atenolol 50 mg, and Plavix 75 mg
-OBJECTIVE:  On examination today, the patient appears well.  He is cheerful and feisty.  Blood pressure 138/80 in the left arm, sitting.  Weight 175 pounds.  Apical pulse rate 80.  Cardiac rhythm is regular without murmur, gallop, rub or click.  Breath sounds are clear to percussion and auscultation.  No jugular venous distension.  No peripheral edema.
-ASSESSMENT:  
-1.	New York Heart Association functional class-I ISHD, status post CABG.
-2.	Well-controlled hypertension.
-PLAN:
-1.	Current regimen.
-2.	Please note that Lipitor was added to his regimen at his last visit for hypercholesterolemia.  Repeat cholesterol (which had been 263) is now 103.  He will continue the Lipitor as well.
-3.	He is to return prior to his planned winter sojourn in the United Kingdom in December.
+REASON FOR VISIT: Dyspnea on exertion, Chest discomfort of exertion, Sore throat, Cough
+HPI: The patient is here indicating that she has joined a gym. She has been experiencing chest discomfort and heavyness with dyspnea on exertion. The symptoms appears when she is on the treadmill and last several minutes after she stops. She is worried about it. She also complains of sore throat and cough.
+MEDICAL HISTORY:Coronary vasospastic events, Glucose intolerance with post prandial hyperglycemia, Hyperlipidemia, Hypertension, Postmenopausal, Cervical osteoarthritis DDD, Microscopic hematuria with negative work up, Obesity
+MEDICATIONS: Amlodipine 5 mg qd, Metoprolol XL 50 mg qd, Valsartan HCTZ 160/25 mg, Atorvastatin 20 mg, Aspirin 81 mg qd, Metformin 500 mg bid
+PHYSICAL EXAM: 56 yo WDWN person in NAD.
+Habitus: meso-endomorphic
+Weight: 80 kg. Height: 170 cm. BMI: 27
+Vital signs: TF  97.8BP  123/74HR  66RR  12
+ASSESSMENT AND PLAN: Chest pressure and dyspnea. The patient has known coronary vasospastic events for which she has consulted with cardiology. The symptoms that she describes suggest possible symptomatic cardiac ischemia. She had a baseline ECG today in my office that was normal. I have instructed the patient to follow up with cardiology for further assessment and an ETT. The description of symptoms do not suggest unstable angina. 
+Glucose intolerance with post prandial hyperglycemia: Continue metformin, well tolerated, HbA1c requested.
+Hyperlipidemia: On atorvastatin; Target LDL < 70, new values requested.
+Hypertension: Stable, continue current medications.
+Rhinopharyngitis: Amoxicillin and fluticasone initiated.
+Gynecology contact information provided. Ophthalmology contact information provided. Bone densitometry requested. Labs requested. Follow up after tests or in 3-6 months.

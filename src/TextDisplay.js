@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./TextDisplay.css";
-// import mapList from './ehr1-dict.json';
-// import phraseMapping from './ehr2.json';
 
 const mapRef = {};
 const textStyle = {
@@ -39,7 +37,15 @@ const labelStyle = {
 
 const versionTitles = {
   1: "AI-Generated Summary",
-  2: "Verified AI-Generated Summary",
+  2: "AI-Generated Summary",
+  3: "AI-Generated Summary",
+  4: "AI-Generated Summary",
+  5: "AI-Generated Summary",
+  6: "Verified AI-Generated Summary",
+  7: "Verified AI-Generated Summary",
+  8: "Verified AI-Generated Summary",
+  9: "Verified AI-Generated Summary",
+  10: "Verified AI-Generated Summary",
 };
 
 function TextDisplay() {
@@ -50,7 +56,6 @@ function TextDisplay() {
   const [popupContent, setPopupContent] = useState("");
   const [popupPosition, setPopupPosition] = useState({ x: 0, y: 0 });
   const [clickedWord, setClickedWord] = useState("");
-  const [versionTitle, setVersionTitle] = useState("AI-Generated Summary");
 
   const [clickedIndex, setClickedIndex] = useState(null);
   const pinkHighlightPhrases = [
@@ -62,6 +67,7 @@ function TextDisplay() {
   const [clickTimes, setClickTimes] = useState([]);
   const [mapList, setMapList] = useState({}); // Now this will be set dynamically
   const [phraseMapping, setPhraseMapping] = useState({}); // Now this will be set dynamically
+  const [versionTitle, setVersionTitle] = useState("AI-Generated Summary");
 
   // A list of phrases from the progress note that were included in the summary.
   const [evidencePhrases, setEvidencePhrases] = useState([]);
@@ -80,20 +86,13 @@ function TextDisplay() {
   useEffect(() => {
     const queryParams = new URLSearchParams(window.location.search);
     const fileNumber = queryParams.get("file") || "1"; // Default to 1 if not specified
-    const versionNumber = parseInt(queryParams.get("v"), 10) || 1; // Default to 1 if not specified
+    const type = queryParams.get("type") || "c"; // 'e' for experimental, 'c' for control
 
-    // Dynamically import the JSON and text files based on the file number
-    import(`./ehr${fileNumber}-dict.json`)
+    import(`/ehr${fileNumber}-dict${type}.json`)
       .then((data) => {
         setMapList(data.default); // Make sure to use data.default with dynamic imports
       })
       .catch((error) => console.error("Failed to load map list:", error));
-
-    import(`./ehr${fileNumber}.json`)
-      .then((data) => {
-        setPhraseMapping(data.default); // Make sure to use data.default with dynamic imports
-      })
-      .catch((error) => console.error("Failed to load phrase mapping:", error));
 
     fetch(`/ehr${fileNumber}.txt`)
       .then((response) => response.text())
@@ -112,7 +111,7 @@ function TextDisplay() {
         console.error("Error loading evidence phrases:", error)
       );
 
-    setVersionTitle(versionTitles[versionNumber]);
+    setVersionTitle(versionTitles[fileNumber]);
   }, [window.location.search]);
 
   const handleClick = (event) => {
@@ -169,11 +168,13 @@ function TextDisplay() {
     URL.revokeObjectURL(href);
   };
 
-  // const handleClosePopup = () => {
-  //   setShowPopup(false);
-  // };
-
-  const getHighlightedText = (inputText, map, mapRef, hoveredWord) => {
+  const getHighlightedText = (
+    inputText,
+    map,
+    mapRef,
+    evidenceText,
+    highlightEvidence
+  ) => {
     let highlightedText = inputText;
 
     // Function to escape regex special characters
@@ -208,25 +209,38 @@ function TextDisplay() {
             hoveredWord === key ? "highlight highlight-active" : "highlight"
           }" data-word="${key}">${match}</span>`
       );
-      // Only replace if hoveredWord matches to prevent unwanted global highlighting
+
+      highlightedText = highlightedText.replace(
+        valueRegex,
+        (_, match) =>
+          `<span class="${
+            hoveredWord === key
+              ? "highlight-value highlight-active"
+              : "highlight-value"
+          }" data-word="${key}">${match}</span>`
+      );
+
+      // Highlighting key when the value is hovered
+      if (hoveredWord === value) {
+        highlightedText = highlightedText.replace(
+          keyRegex,
+          `<span class="highlight highlight-active" data-word="${value}">${key}</span>`
+        );
+      } else {
+        highlightedText = highlightedText.replace(
+          keyRegex,
+          `<span class="${
+            hoveredWord === key ? "highlight highlight-active" : "highlight"
+          }" data-word="${key}">${key}</span>`
+        );
+      }
+      // Highlighting value when the key is hovered
       if (hoveredWord === key) {
         highlightedText = highlightedText.replace(
           valueRegex,
           `<span class="highlight-value highlight-active" data-word="${key}">${value}</span>`
         );
       }
-    });
-
-    // Process mapRef similar to map but for underlining
-    Object.keys(mapRef).forEach((key) => {
-      const escapedKey = escapeRegExp(key);
-      // This regex now also properly accounts for punctuation
-      const keyRegex = new RegExp(`(${escapedKey})(?=[\\s.,;!?]|$)`, "gi");
-
-      highlightedText = highlightedText.replace(
-        keyRegex,
-        `<span class="underline" data-refkey="${key}">${key}</span>`
-      );
     });
 
     return highlightedText;
@@ -294,6 +308,7 @@ function TextDisplay() {
   return (
     <div style={containerStyle}>
       {" "}
+      {/* Flex container for both text displays */}{" "}
       {/* Flex container for both text displays */}
       {/* Container for Progress Note (Now on the left) */}
       <div style={{ width: "50%" }}>
