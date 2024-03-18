@@ -46,7 +46,8 @@ const labelStyle = {
     6: "Verified AI-Generated Summary",
     7: "Verified AI-Generated Summary",
     8: "Verified AI-Generated Summary",
-    9: "Verified AI-Generated Summary"
+    9: "Verified AI-Generated Summary",
+    10: "Verified AI-Generated Summary"
   };
 
 
