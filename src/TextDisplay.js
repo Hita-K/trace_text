@@ -65,6 +65,7 @@ function TextDisplay() {
 
   // A list of phrases from the progress note that were included in the summary.
   const [evidencePhrases, setEvidencePhrases] = useState([]);
+  // State variable for whther or not evidence phrases are currently highlighted.
   const [areEvidencePhrasesHighlighted, setAreEvidencePhrasesHighlighted] =
     useState(false);
 
@@ -299,7 +300,6 @@ function TextDisplay() {
         <div style={labelStyle}>Progress Note</div>{" "}
         {/* Label for Progress Note */}
         <div
-          id="progress-note-div"
           style={textStyle}
           onMouseOver={handleMouseOver}
           onMouseOut={handleMouseOut}
