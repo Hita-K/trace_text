@@ -273,10 +273,8 @@ function TextDisplay() {
       inputText.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&");
 
     // Highlight phrases with potential punctuation
-    console.log(evidencePhrases);
     evidencePhrases.forEach((phrase) => {
       const escapedPhrase = escapeRegExp(phrase);
-      console.log(escapedPhrase);
       // Adjusted to match phrase potentially followed by punctuation
       const phraseRegex = new RegExp(
         `(${escapedPhrase})(?=[\\s.,;!?]|$)`,
@@ -287,8 +285,6 @@ function TextDisplay() {
         `<span class="highlight">$&</span>`
       );
     });
-
-    console.log(highlightedText);
 
     return highlightedText;
   };
